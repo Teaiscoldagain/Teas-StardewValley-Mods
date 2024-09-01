@@ -1,0 +1,156 @@
+///// WRITTEN FOR CONTENT PATCHER 2.3 /////
+
+
+///// SEE WIKI https://tinyurl.com/yc4pxtat FOR DETAILS /////
+///// Any field indicated as OPTIONAL can be OMMITTED IN ITS ENTIRETY if you are happy with the DEFAULT value being used /////
+///// Any dollar sign + number (e.g. $52) indicates that a value is needed - this notation is used to allow this code block to be saved as a reusable snipped in VSCode /////
+
+{
+	"Changes": [
+		{
+			"Action": "EditData",
+			"Target": "Data/Machines",
+			"Entries": {
+				// Beginning - single machine entry 
+				"(BC){{ModID}}_$1": {	// Craftable name as set in Data/BigCraftables
+					
+					
+					// Item Processing Rules - Multiple rules for the same machine can be put within the square brackets
+					"OutputRules": [
+						
+						
+						// Each new rule will be contained in its own set of curly brackets            
+						{
+							"Id": "{{ModID}}_$2", // Unique id for the rule for this machine but can be reused within a different machine
+							"Triggers": [
+								{
+									"Trigger": "${3|ItemPlacedInMachine, OutputCollected, MachinePutDown, DayUpdate|}", // Optional // Default: ItemPlacedInMachine 
+									"RequiredItemId": "$4", // Optional // Default: null (this will accept ANY id) // Item ID if Trigger is ItemPlacedInMachine or OutputCollected
+									"RequiredTags": [ // Optional // Default: null // Can use "!" to exclude a tag, example: "!fossil_item"
+										"$5" // Comma separated list of context tags
+									],
+									"RequiredCount": "$6", // Optional - remove quotes if adding a value // Default: 1 // number of input items required
+									"Condition": "$7" // Optional - highly customizable // Default: null // game state query check to whether trigger should be checked
+								}
+							],
+							"OutputItem": [
+								{
+									"Condition": "$7", // Optional // Default: null - always true // Game state query which indicates whether this entry should be applied
+
+									// Common Item Spawn Fields // See https://tinyurl.com/3snevpyf for details
+									"Id": "$9",	// Unique string ID for this entry (not the item itself) within the current list
+									"ItemId": "$10",	// The qualified or unqualified item ID, or item query (Qualified means with (O), unqualified is without the (O)
+									"RandomItemId": "$11",  // Optional // Default: Null (If set will make the Item ID redundant) // A list of item IDs to randomly choose from, using the same format as ItemId
+									"ObjectInternalName": "$12",  // Optional // Default: item's name in Data/Objects // Setting prevents flavored items from stacking, for objects only
+									"ObjectDisplayName": "$13",	// Optional // Default: item's name in Data/Objects // For better localization, for objects only, a tokenizable string for the item's display name, 
+
+									"PreserveType": "${14|Jelly,Juice,Pickle,Roe,AgedRoe|", // Optional // Default: None // The produced item's preserved item type, if applicable. This sets the equivalent flag on the output item. 
+									"PreserveId": "$15",  // Optional // Default: None // The produced item's preserved unqualified item ID. If applicable. For example, blueberry wine has its preserved item ID set to the blueberry ID. This can be set to DROP_IN to use the input item's ID
+									
+									"IsRecipe": "$16",  // Optional // Default: false // Whether to get the crafting/cooking recipe for the item, instead of the item itself
+									"CopyColor": "$17", // Optional // Default: false // Whether to inherit the color of the input item if it was a ColoredObject
+
+									"CopyPrice": "$18", 	// Optional // Default: False	// Before modifiers are applied. Whether to inherit the base price of the input item
+									"PriceModifiers": [ // See format and examples here https://tinyurl.com/5n8yh2mf // Optional // Default: none // Possible: Multiple
+										{
+											"Id": "$19", // The unique string ID for this modifier within the current list
+											"Modification": "${20|Add,Subtract, Multiply,Divide,Set|}", // Type of change to apply
+											"Amount": "$21", // Optional if RandomAmount is set // Operand applied to the target value e.g. multiplier if used for Multiply
+											"RandomAmount": "$22", // Optional // If set, Amount is ignored // List of random amounts, equal probablity, persists for a day
+											"Condition": "$23" // Optional // Default: null - always true // Game state query which checks if this change should be applied
+										}
+									],
+									"PriceModifierMode": "${24|Stack,Minimum,Maximum|}", // What to do if multiple modifiers apply to the same value
+
+									"MaxItems": "$25", // Optional // Default: Unlimited // If this entry produces multiple separate item stacks, the maximum number to return. Does not affect stack size
+									"MinStack": "$26", // Optional // Default: -1 // The item's minimum and default stack size
+									"MaxStack": "$27", // Optional // Default: -1 // If set to a value higher than MinStack, the stack is set to a random value between them (inclusively)
+									"StackModifiers": [
+										{
+											// Same structure as PriceModifiers above
+										}
+									],
+									"StackModifierMode": "${28|Stack,Minimum,Maximum|}", // What to do if multiple modifiers apply to the same value								
+
+									
+
+									"CopyQuality": "$29", // Optional // Default: False	// Whether to inherit the quality of the input // Applied before modifiers
+									"QualityModifiers": [
+										{
+											// Same structure as PriceModifiers above
+										}
+									],
+									"QualityModifierMode": "${30|Stack,Minimum,Maximum|}", // What to do if multiple modifiers apply to the same value
+									"Quality": "$31", // Optional // Default: -1 // Quality of the item to find. One of 0 (normal), 1 (silver), 2 (gold), or 4 (iridium)
+									
+									"PerItemCondition": "$32",	 // Optional // Default: Always true // Can be used to filter RANDOM_ITEMS // Game state query which indicates whether an item produced from the other fields should be returned						
+									"IncrementMachineParentSheetIndex": "$33", // Optional // Default: 0 // An amount by which to increment the machine's spritesheet index while it's processing this output
+									"CustomData": "$34" // Machine-specific data provided to the machine logic, if applicable
+								}
+							],
+
+							"UseFirstValidOutput": "$40", // Optional // Default: false (if more than one outputs match, one will be selected randomly)
+							"MinutesUntilReady": "$41", // Optional // Default: instantly unless DaysUntilReady is specified // Ingame minutes until output ready
+							"DaysUntilReady": "$42", // Optional // Default: Days > Minutes > Instantly // In game days until output ready, supersedes minutes
+        					"InvalidCountMessage": "$43", // Optional // If set, overrides the machine's main InvalidCountMessage field 
+        					"RecalculateOnCollect": "$44" // Optional // Default: null - always false // Whether to regenerate the output right before the player collects it, similar to bee houses
+						}
+					], // End of OutputRules
+
+
+					// Behavior adjustments
+					"AdditionalConsumedItems": [ // Optional // list of extra items required before OutputRules will be checked
+						{
+							"ItemId": "$50", // The qualified or unqualified item ID for the required item
+							"RequiredCount": "$51", // Optional // Default: 1 // The required stack size for the item matching ItemId // integer with no quotes
+							"InvalidCountMessage": "$52 [LocalizedText Strings]" // Optional // If set, overrides the machine's main InvalidCountMessage field
+						}
+					],
+					"AllowFairyDust": "$53", // Optional // Default: true // Whether the player can add fairy dust to speed up the machine
+					"PreventTimePass": "$54", // Optional // Default: null // Multiple values allowed: Outside, Inside, Spring, Summer, Fall, Winter, Sun, Rain, Always (for advanced logic)
+					"ReadyTimeModifiers": "$55", // Optional // Quantity Modifiers - See PriceModifiers example in OutputRules
+					"ReadyTimeModifierMode": "$56", // Optional // Default: Stack // Values: Stack, Minimum, Maximum // how to process multiple modifiers
+					"AllowLoadWhenFull": "$57", // Optional // Default: false // Whether the player can drop a new item into the machine before it's done processing the last one (like the crystalarium). The previous item will be lost
+					"ClearContentsOvernightCondition": "$58", // Optional // Default: null - always false // A game state query which indicates whether the machine should be emptied overnight, so any current output will be lost
+
+
+
+					// Player Interaction Messages //
+					"InvalidItemMessage": "$60",	// Optional // Default: null // A tokenizable string for the message shown in a toaster notification if the player tries to input an item that isn't accepted by the machine
+					"InvalidItemMessageCondition": "$61", // Optional // Default: null - always true // A game state query which indicates whether InvalidItemMessage should be shown. This can use item-related queries like ITEM_TYPE
+					"InvalidCountMessage": "$62 [LocalizedText Strings]", // Optional // A tokenizable string for the message shown in a toaster notification if the input inventory doesn't contain this item, unless overridden by InvalidCountMessage under OutputRules
+
+					// Audio & Visual
+					"LoadEffects": [
+						{
+							// See details on https://tinyurl.com/2pyzjjac
+						}
+					],
+					"WorkingEffects": [
+						{
+							// See details on https://tinyurl.com/2pyzjjac
+						}
+					],
+					"WorkingEffectChance": "$63", // Optional // Default: 0.33 // The percentage chance to apply WorkingEffects each time the day starts or the in-game clock changes, as a value between 0 (never) and 1 (always)
+					"LightWhileWorking": { // Optional // Default: none // light emitted by the machine while it's processing an item
+						"Radius": "$64", // Optional // Default: 1 // The size of the area covered by the light effect, as a multiplier of the default radius (like 1.5 for an area 50% wider than the default)
+						"Color": "$65" // Optional // Default: White // A tint color to apply to the light
+					},
+					"ShowNextIndexWhileWorking": "$66", // Optional // Default: false // Whether to show the next sprite in the machine's spritesheet while it's processing an item
+    				"ShowNextIndexWhenReady": "$67",	// Optional // Default: false // Whether to show the next sprite in the machine's spritesheet when ready
+
+					// Advanced Logic //
+					"HasInput": "$70", // Optional // Default: false // Whether to force adding the machine_input context tags
+    				"HasOutput": "$71", // Optional // Default: false // Whether to force adding the machine_output context tags
+					"IsIncubator": "$72", // Optional // Default: false // Whether this machine acts as an incubator when placed in a building, so players can incubate eggs in it
+					"StatsToIncrementWhenLoaded": "$73", // Optional // Default: null // See https://tinyurl.com/4bj8n7k3
+					"StatsToIncrementWhenHarvested": "$74",	// Optional // Default: null // See https://tinyurl.com/4bj8n7k3
+					"ExperienceGainOnHarvest": "$75", // Optional // Default: null // Experience points to grant on harvesting from this machine. For example, set to "Farming 7 Fishing 5" to grant 7 Farming and 5 Fishing xp
+					"CustomFields": "$76" // Optional // The custom fields for this entry
+
+
+				}
+			}
+		}
+	]
+}
