@@ -13,7 +13,6 @@
 31,Orange Office Stool,chair,-1,-1,1,350,-1
 64,Dark Throne,chair,-1,-1,4,2000,-1
 67,Dining Chair,chair,-1,-1,4,1200,-1
-70,Dining Chair,chair,-1,-1,4,1200,-1
 73,Green Plush Seat,chair,-1,-1,4,750,-1
 76,Pink Plush Seat,chair,-1,-1,4,750,-1
 79,Winter Chair,chair,-1,-1,4,750,-1
@@ -108,20 +107,6 @@
 1368,Small Crystal,decor,1 1,1 1,1,750,-1
 1369,Decorative Lantern,decor,1 1,1 1,1,500,-1
 1376,House Plant,decor,1 2,1 1,1,250,-1
-1377,House Plant,decor,1 2,1 1,1,250,-1
-1378,House Plant,decor,1 2,1 1,1,250,-1
-1379,House Plant,decor,1 2,1 1,1,250,-1
-1380,House Plant,decor,1 2,1 1,1,250,-1
-1381,House Plant,decor,1 2,1 1,1,250,-1
-1382,House Plant,decor,1 2,1 1,1,250,-1
-1383,House Plant,decor,1 2,1 1,1,250,-1
-1384,House Plant,decor,1 2,1 1,1,250,-1
-1385,House Plant,decor,1 2,1 1,1,250,-1
-1386,House Plant,decor,1 2,1 1,1,250,-1
-1387,House Plant,decor,1 2,1 1,1,250,-1
-1388,House Plant,decor,1 2,1 1,1,250,-1
-1389,House Plant,decor,1 2,1 1,1,250,-1
-1390,House Plant,decor,1 2,1 1,1,250,-1
 1391,Oak End Table,table,1 2,1 1,2,500,-1
 1393,Walnut End Table,table,1 2,1 1,2,500,-1
 1395,Birch End Table,table,1 2,1 1,2,500,-1
@@ -232,9 +217,6 @@
 1960,Indoor Hanging Basket,painting,1 2,1 2,1,400,-1
 1961,Winter Tree Decal,painting,1 2,1 2,1,400,-1
 1760,Small Junimo Plush,decor,1 1,1 1,1,1500,-1
-1761,Small Junimo Plush,decor,1 1,1 1,1,1500,-1
-1762,Small Junimo Plush,decor,1 1,1 1,1,1500,-1
-1763,Small Junimo Plush,decor,1 1,1 1,1,1500,-1
 1764,Futan Rabbit,decor,1 1,1 1,1,1500,-1
 1371,Wumbus Statue,decor,2 3,2 1,1,500,-1
 1373,Bobo Statue,decor,2 3,2 1,1,500,-1
@@ -290,38 +272,15 @@
 2625,Winter Banner,painting,1 3,1 3,1,500,-1
 2626,Moonlight Jellies Banner,painting,1 3,1 3,1,500,-1
 2627,Jungle Decal,painting,1 3,1 3,1,500,-1
-2628,Jungle Decal,painting,1 3,1 3,1,500,-1
-2629,Jungle Decal,painting,1 3,1 3,1,500,-1
-2630,Jungle Decal,painting,1 3,1 3,1,500,-1
 2631,Starport Decal,painting,1 3,1 3,1,500,-1
 2632,Decorative Pitchfork,painting,1 3,1 3,1,500,-1
 2633,Wood Panel,painting,1 3,1 3,1,500,-1
 2634,Decorative Axe,painting,1 3,1 3,1,500,-1
 2635,Log Panel,painting,1 3,1 3,1,500,-1
-2636,Log Panel,painting,1 3,1 3,1,500,-1
 1817,Ceiling Leaves,painting,1 1,1 1,1,50,-1
-1818,Ceiling Leaves,painting,1 1,1 1,1,50,-1
-1819,Ceiling Leaves,painting,1 1,1 1,1,50,-1
-1820,Ceiling Leaves,painting,1 1,1 1,1,50,-1
-1821,Ceiling Leaves,painting,1 1,1 1,1,50,-1
 1687,Cloud Decal,painting,2 2,2 2,1,500,-1
-1692,Cloud Decal,painting,2 2,2 2,1,500,-1
 2637,Floor Divider R,rug,1 2,1 1,1,50,-1
 2638,Floor Divider L,rug,1 2,1 1,1,50,-1
-2639,Floor Divider R,rug,1 2,1 1,1,50,-1
-2640,Floor Divider L,rug,1 2,1 1,1,50,-1
-2641,Floor Divider R,rug,1 2,1 1,1,50,-1
-2642,Floor Divider L,rug,1 2,1 1,1,50,-1
-2643,Floor Divider R,rug,1 2,1 1,1,50,-1
-2644,Floor Divider L,rug,1 2,1 1,1,50,-1
-2645,Floor Divider R,rug,1 2,1 1,1,50,-1
-2646,Floor Divider L,rug,1 2,1 1,1,50,-1
-2647,Floor Divider R,rug,1 2,1 1,1,50,-1
-2648,Floor Divider L,rug,1 2,1 1,1,50,-1
-2649,Floor Divider R,rug,1 2,1 1,1,50,-1
-2650,Floor Divider L,rug,1 2,1 1,1,50,-1
-2651,Floor Divider R,rug,1 2,1 1,1,50,-1
-2652,Floor Divider L,rug,1 2,1 1,1,50,-1
 2488,Light Green Rug,rug,3 2,3 2,2,10000,-1
 2584,'Jade Hills Extended',painting,4 2,4 2,1,6750,-1
 2720,Large Brown Couch,couch,4 2,4 1,4,5750,-1
@@ -336,12 +295,6 @@
 2802,Large Cottage Rug,rug,4 3,4 3,1,10000,-1
 2732,'Physics 101',painting,2 2,2 2,1,6750,-1
 2734,Wall Sconce,sconce,-1,-1,1,500,-1
-2736,Wall Sconce,sconce,-1,-1,1,500,-1
-2738,Wall Sconce,sconce,-1,-1,1,1000,-1
-2740,Wall Sconce,sconce,-1,-1,1,500,-1
-2748,Wall Sconce,sconce,-1,-1,1,500,-1
-2812,Wall Sconce,sconce,-1,-1,1,500,-1
-2750,Wall Sconce,sconce,-1,-1,1,500,-1
 2742,Blossom Rug,rug,6 4,6 4,1,10000,-1
 2870,Funky Rug,rug,5 4,5 4,1,10000,-1
 2875,Modern Rug,rug,5 4,5 4,1,10000,-1
@@ -633,13 +586,6 @@ MessyShirt,MessyShirt,rug,1 1,1 1,1,999,2
 MessyShorts,MessyShorts,rug,1 1,1 1,1,999,2
 MoldyCouch,MoldyCouch,couch,-1,-1,4,999,2
 FancyTree1,Fancy House Plant,decor,2 3,2 1,1,500,-1
-FancyTree2,Fancy House Plant,decor,2 3,2 1,1,500,-1
-FancyTree3,Fancy House Plant,decor,2 3,2 1,1,500,-1
-FancyHousePlant3,House Plant,decor,1 2,1 1,1,250,-1
-FancyHousePlant1,House Plant,decor,1 2,1 1,1,250,-1
-FancyHousePlant2,House Plant,decor,1 2,1 1,1,250,-1
-FancyHousePlant4,House Plant,decor,1 2,1 1,1,250,-1
-FancyHousePlant5,House Plant,decor,1 2,1 1,1,250,-1
 PigPainting,Pig Painting,painting,3 2,3 2,1,500,-1
 MidnightBeachBed,Midnight Beach Bed,bed,2 4,2 3,1,5000,-1
 MidnightBeachDoubleBed,Midnight Beach Double Bed,bed double,3 4,3 3,1,5000,-1
