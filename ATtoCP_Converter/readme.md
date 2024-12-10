@@ -1,8 +1,8 @@
 # AT >> CP Converter<br><br>
 
-### Data Schema based on CP [Furniture Fields in SDV Wiki](https://stardewvalleywiki.com/Modding:Items#Furniture:~:text=for%20this%20entry.-,Furniture,-Furniture%20are%20decorative)<br><br>
+## Data Schema based on CP [Furniture Fields in SDV Wiki](https://stardewvalleywiki.com/Modding:Items#Furniture:~:text=for%20this%20entry.-,Furniture,-Furniture%20are%20decorative)<br><br>
 
-Definitions of additional values that will be derived from available AT data to facilitate CP Conversion:
+### Definitions of additional values that will be derived from available AT data to facilitate CP Conversion:
 
 | Auxiliary Values | Formula | Definition in context of AT |
 | --- | --- | --- |
@@ -10,7 +10,7 @@ Definitions of additional values that will be derived from available AT data to 
 | Texture Index | IF: textures as individual pngs: extract final digits (e.g. texture_0 > texture_index = 0)<br><br><br>IF: textures as single file: split textures using PILLOW, assign texture_index retrospectively to slices | To provide unique identification and ability to refer to Manual Variations we will extract the numerical reference from the existing texture_x.png file, if possible. If the textures.png (collective) is used instead the png will be first sliced into individual texture pngs and named using the AT convention of texture_x.png |
 
 <br><br>
-Definitions of data conversions needed to build a CP model of an item based on data available n the AT version of the mod:
+### Definitions of data conversions needed to build a CP model of an item based on data available n the AT version of the mod:
 
 | CP | Formula | Definition in context of AT |
 | --- | --- | --- |
